@@ -39,9 +39,9 @@ public class ContaBancariaTeste {
 	}
 	
 	@Test
-	public void testTelefone(){
-		umaConta.setTelefone("umTelefone");
-		assertEquals("umTelefone", umaConta.getTelefone());
+	public void testOperacao(){
+		umaConta.setOperacao("umaOperacao");
+		assertEquals("umaOperacao", umaConta.getOperacao());
 	}
 	
 	@Test
@@ -49,4 +49,13 @@ public class ContaBancariaTeste {
 		umaConta.setCpf("umCPF");
 		assertEquals("umCPF", umaConta.getCpf());
 	}
+	
+	@Test
+	public void testImprimeDados(){
+		umaConta.setNome("umNome");
+		umaConta.setCpf("umCPF");
+		umaConta.setOperacao("umaOperacao");
+		assertEquals("Nome: umNome	CPF: umCPF	Conta: 000-123-456-78	Operacao: umaOperacao",umaConta.imprimeDados());
+	}
+		
 }

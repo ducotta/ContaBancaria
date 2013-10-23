@@ -4,9 +4,9 @@ public class ContaBancaria {
 	
 	private String nome;
 	private String endereco;
-	private String telefone;
 	private String cpf;
 	private String numeroContaBancaria;
+	private String operacao;
 	private int senha;
 	
 	public ContaBancaria(String numeroContaBancaria, int senha){
@@ -30,14 +30,6 @@ public class ContaBancaria {
 		this.endereco = endereco;
 	}
 
-	public String getTelefone() {
-		return telefone;
-	}
-
-	public void setTelefone(String telefone) {
-		this.telefone = telefone;
-	}
-
 	public String getCpf() {
 		return cpf;
 	}
@@ -53,6 +45,14 @@ public class ContaBancaria {
 	public void setNumeroContaBancaria(String numerocontaBancaria) {
 		this.numeroContaBancaria = numerocontaBancaria;
 	}
+	
+	public String getOperacao() {
+		return operacao;
+	}
+
+	public void setOperacao(String operacao) {
+		this.operacao = operacao;
+	}
 
 	public int getSenha() {
 		return senha;
@@ -60,6 +60,13 @@ public class ContaBancaria {
 
 	public void setSenha(int senha) {
 		this.senha = senha;
+	}
+	
+	public String imprimeDados(){
+		String dados;
+		dados = "Nome: " + nome + "\tCPF: " + cpf + "\tConta: " + numeroContaBancaria + "\tOperacao: " + operacao;
+		System.out.println(dados);
+		return dados;
 	}
 	
 	
