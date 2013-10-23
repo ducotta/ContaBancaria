@@ -51,11 +51,30 @@ public class ContaBancariaTeste {
 	}
 	
 	@Test
+	public void testSenhaPassa(){
+		umaConta.setSenhaEsperada(1234);
+		umaConta.setNome("umNome");
+		umaConta.setCpf("umCPF");
+		umaConta.setOperacao("umaOperacao");
+		assertNotNull(umaConta.imprimeDados());
+	}
+	
+	@Test
 	public void testImprimeDados(){
+		umaConta.setSenhaEsperada(1234);
 		umaConta.setNome("umNome");
 		umaConta.setCpf("umCPF");
 		umaConta.setOperacao("umaOperacao");
 		assertEquals("Nome: umNome	CPF: umCPF	Conta: 000-123-456-78	Operacao: umaOperacao",umaConta.imprimeDados());
+	}
+	
+	@Test
+	public void testSenhaNaoPassa(){
+		umaConta.setSenhaEsperada(1235);
+		umaConta.setNome("umNome");
+		umaConta.setCpf("umCPF");
+		umaConta.setOperacao("umaOperacao");
+		assertNull(umaConta.imprimeDados());
 	}
 		
 }
