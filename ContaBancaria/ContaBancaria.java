@@ -71,14 +71,19 @@ public class ContaBancaria {
 		this.senhaEsperada = senhaEsperada;
 	}
 	
+	
 	public String imprimeDados(){
-		String dados;
-		dados = "Nome: " + nome + "\tCPF: " + cpf + "\tConta: " + numeroContaBancaria + "\tOperacao: " + operacao;
-		System.out.println(dados);
-		return dados;
+		if (senha == senhaEsperada){
+			String dados;
+			dados = "Nome: " + nome + "\tCPF: " + cpf + "\tConta: " + numeroContaBancaria + "\tOperacao: " + operacao;
+			System.out.println(dados);
+			return dados;
+		}
+		else{
+			System.out.println("Acesso negado, senha incorreta!");
+			return null;
+		}
 	}
-	
-	
 	
 
 }
