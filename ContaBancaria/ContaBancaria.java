@@ -7,6 +7,7 @@ public class ContaBancaria {
 	private String cpf;
 	private String numeroContaBancaria;
 	private String operacao;
+	private int senhaEsperada;
 	private int senha;
 	
 	public ContaBancaria(String numeroContaBancaria, int senha){
@@ -60,6 +61,14 @@ public class ContaBancaria {
 
 	public void setSenha(int senha) {
 		this.senha = senha;
+	}
+	
+	public int getSenhaEsperada() {
+		return senhaEsperada;
+	}
+
+	public void setSenhaEsperada(int senhaEsperada) {
+		this.senhaEsperada = senhaEsperada;
 	}
 	
 	public String imprimeDados(){
