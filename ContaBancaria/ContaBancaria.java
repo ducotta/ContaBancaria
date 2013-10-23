@@ -6,11 +6,11 @@ public class ContaBancaria {
 	private String endereco;
 	private String telefone;
 	private String cpf;
-	private String numerocontaBancaria;
+	private String numeroContaBancaria;
 	private int senha;
 	
 	public ContaBancaria(String numeroContaBancaria, int senha){
-		this.numerocontaBancaria = numeroContaBancaria;
+		this.numeroContaBancaria = numeroContaBancaria;
 		this.senha = senha;
 	}
 
@@ -46,12 +46,12 @@ public class ContaBancaria {
 		this.cpf = cpf;
 	}
 
-	public String getNumerocontaBancaria() {
-		return numerocontaBancaria;
+	public String getNumeroContaBancaria() {
+		return numeroContaBancaria;
 	}
 
-	public void setNumerocontaBancaria(String numerocontaBancaria) {
-		this.numerocontaBancaria = numerocontaBancaria;
+	public void setNumeroContaBancaria(String numerocontaBancaria) {
+		this.numeroContaBancaria = numerocontaBancaria;
 	}
 
 	public int getSenha() {

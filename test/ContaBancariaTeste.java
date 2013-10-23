@@ -5,18 +5,20 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
+import ContaBancaria.ContaBancaria;
+
 public class ContaBancariaTeste {
 	
 	ContaBancaria umaConta;
 
 	@Before
 	public void setUp() throws Exception {
-	umaConta = new ContaBancaria(000-123-456-78, 1234);
+	umaConta = new ContaBancaria("000-123-456-78", 1234);
 	}
 
 	@Test
 	public void testNumeroContaBancaria(){
-		assertEquals(000-123-456-78, umaConta.getNumeroContaBancaria());
+		assertEquals("000-123-456-78", umaConta.getNumeroContaBancaria());
 	}
 
 	@Test
@@ -25,15 +27,26 @@ public class ContaBancariaTeste {
 	}
 	
 	@Test
-	public void testDadosPessoais(){
+	public void testNome(){
 		umaConta.setNome("umNome");
-		umaConta.setEndereco("umEndereco");
-		umaConta.setTelefone("umTelefone");
-		umaConta.setCPF("umCPF");
 		assertEquals("umNome", umaConta.getNome());
-		assertEquals("UmEndereco", umaConta.getEndereco());
-		assertEquals("umTelefone", umaConta.getTelefone());
-		assertEquals("umCPF", umaConta.getCPF());
 	}
 
+	@Test
+	public void testEndereco(){
+		umaConta.setEndereco("umEndereco");
+		assertEquals("umEndereco", umaConta.getEndereco());
+	}
+	
+	@Test
+	public void testTelefone(){
+		umaConta.setTelefone("umTelefone");
+		assertEquals("umTelefone", umaConta.getTelefone());
+	}
+	
+	@Test
+	public void testCpf(){
+		umaConta.setCpf("umCPF");
+		assertEquals("umCPF", umaConta.getCpf());
+	}
 }
