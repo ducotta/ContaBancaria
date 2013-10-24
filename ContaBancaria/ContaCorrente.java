@@ -2,7 +2,7 @@ package ContaBancaria;
 
 public class ContaCorrente extends ContaBancaria {
 	
-	public Double saldoInicial = 0.0;
+	public Double saldo = 0.0;
 	public Double saque = 0.0;
 	public Double deposito = 0.0;
 	public Double saldoFinal;
@@ -12,11 +12,11 @@ public class ContaCorrente extends ContaBancaria {
 	}
 
 	public Double getSaldoInicial() {
-		return saldoInicial;
+		return saldo;
 	}
 
 	public void setSaldoInicial(Double saldoInicial) {
-		this.saldoInicial = saldoInicial;
+		this.saldo = saldoInicial;
 	}
 
 	public Double getSaque() {
@@ -45,20 +45,21 @@ public class ContaCorrente extends ContaBancaria {
 
 	public void imprimeSaldo(){
 		if (getSenha() == getSenhaEsperada())
-			System.out.println("Saldo disponivel: " + saldoInicial );		
+			System.out.println("Saldo disponivel: " + saldo );		
 	}
 	
 	public Double calculaSaldoFinal(){
 		if (getSenha() == getSenhaEsperada())
-			saldoFinal = saldoInicial+deposito-saque;
-		System.out.println("Saldo disponivel: " + saldoInicial );
+			saldoFinal = saldo+deposito-saque;
+		System.out.println("Saldo disponivel: " + saldo );
 		return saldoFinal;
 		
 	}
 	
 	public Double atualizaSaldo(){
-		if (getDeposito() != 0.0) || (getSaque() != 0.0)
-			
+		if ((getDeposito() != 0.0)||(getSaque() != 0.0))
+			saldo = saldoFinal;
+		return saldo;
 	}
 	
 	

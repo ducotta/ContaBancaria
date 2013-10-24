@@ -5,18 +5,20 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
+import ContaBancaria.ContaCorrente;
+
 public class ContaCorrenteTeste {
 	
 	ContaCorrente umaContaCorrente;
 
 	@Before
 	public void setUp() throws Exception {
-		umaContaCorrente = new ContaCorrente(000-123-456-78, 1234);
+		umaContaCorrente = new ContaCorrente("000-123-456-78", 1234);
 	}
 	
 	@Test
 	public void testNumeroContaBancaria(){
-		assertEquals(000-123-456-78, umaContaCorrente.getNumeroContaBancaria());
+		assertEquals("000-123-456-78", umaContaCorrente.getNumeroContaBancaria());
 	}
 
 	@Test
@@ -25,15 +27,27 @@ public class ContaCorrenteTeste {
 	}
 	
 	@Test
-	public void testDadosPessoais(){
+	public void testNome(){
 		umaContaCorrente.setNome("umNome");
-		umaContaCorrente.setEndereco("umEndereco");
-		umaContaCorrente.setTelefone("umTelefone");
-		umaContaCorrente.setCPF("umCPF");
 		assertEquals("umNome", umaContaCorrente.getNome());
-		assertEquals("UmEndereco", umaContaCorrente.getEndereco());
-		assertEquals("umTelefone", umaContaCorrente.getTelefone());
-		assertEquals("umCPF", umaContaCorrente.getCPF());
+	}
+
+	@Test
+	public void testEndereco(){
+		umaContaCorrente.setEndereco("umEndereco");
+		assertEquals("umEndereco", umaContaCorrente.getEndereco());
+	}
+	
+	@Test
+	public void testOperacao(){
+		umaContaCorrente.setOperacao("umaOperacao");
+		assertEquals("umaOperacao", umaContaCorrente.getOperacao());
+	}
+	
+	@Test
+	public void testCpf(){
+		umaContaCorrente.setCpf("umCPF");
+		assertEquals("umCPF", umaContaCorrente.getCpf());
 	}
 	
 	@Test
@@ -56,7 +70,11 @@ public class ContaCorrenteTeste {
 	
 	@Test
 	public void testSaldoFinal(){
-		assertEquals(150.70, umaContaCorrente.calculaSaldoFinal(100.00, 10.50, 60.70), 0.001);
+		umaContaCorrente.setSenhaEsperada(1234);
+		umaContaCorrente.setSaldoInicial(100.00);
+		umaContaCorrente.setSaque(10.50);
+		umaContaCorrente.setDeposito(60.70);
+		assertEquals(150.20, umaContaCorrente.calculaSaldoFinal(), 0.001);
 	}
 
 }
