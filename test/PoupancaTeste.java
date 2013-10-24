@@ -84,5 +84,14 @@ public class PoupancaTeste {
 		umaPoupanca.setDeposito(60.70);
 		assertEquals(150.20, umaPoupanca.calculaSaldoFinal(), 0.001);
 	}
+	
+	@Test
+	public void testAtualizaSaldo(){
+		umaPoupanca.setSaldoInicial(100.00);
+		umaPoupanca.setSaldoFinal(150.20);
+		umaPoupanca.setSaque(10.50);
+		umaPoupanca.setDeposito(60.70);
+		assertEquals(150.20, umaPoupanca.atualizaSaldo(), 0.001);		
+	}
 
 }
