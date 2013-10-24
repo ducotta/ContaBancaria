@@ -68,6 +68,7 @@ public class ContaCorrenteTeste {
 		assertEquals(60.70, umaContaCorrente.getDeposito(), 0.001);
 	}
 	
+	
 	@Test
 	public void testSaldoFinal(){
 		umaContaCorrente.setSenhaEsperada(1234);
@@ -75,6 +76,15 @@ public class ContaCorrenteTeste {
 		umaContaCorrente.setSaque(10.50);
 		umaContaCorrente.setDeposito(60.70);
 		assertEquals(150.20, umaContaCorrente.calculaSaldoFinal(), 0.001);
+	}
+	
+	@Test
+	public void testAtualizaSaldo(){
+		umaContaCorrente.setSaldoInicial(100.00);
+		umaContaCorrente.setSaldoFinal(150.20);
+		umaContaCorrente.setSaque(10.50);
+		umaContaCorrente.setDeposito(60.70);
+		assertEquals(150.20, umaContaCorrente.atualizaSaldo(), 0.001);		
 	}
 
 }
